@@ -1,4 +1,4 @@
-import Counter from "./components/Counter";
+import HooksCounter from "./components/HooksCounter";
 
 function App() {
   return (
@@ -8,7 +8,8 @@ function App() {
         Simple Counter Application
       </h1>
       <div className="max-w-md mx-auto mt-10 space-y-5">
-        <Counter></Counter>
+        {/*       <Counter></Counter> */}
+        <HooksCounter />
       </div>
     </div>
   );
