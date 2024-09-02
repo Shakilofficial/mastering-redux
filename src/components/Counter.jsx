@@ -8,13 +8,13 @@ function Counter({ count, increment, decrement }) {
       <div className="flex space-x-3">
         <button
           className="bg-indigo-400 text-white px-3 py-2 rounded shadow"
-          onClick={() => increment(1)}
+          onClick={() => increment()}
         >
           Increment
         </button>
         <button
           className="bg-red-400 text-white px-3 py-2 rounded shadow"
-          onClick={() => decrement(1)}
+          onClick={() => decrement()}
         >
           Decrement
         </button>

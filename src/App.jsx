@@ -1,3 +1,4 @@
+import DynamicHooksCounter from "./components/DynamicHooksCounter";
 import HooksCounter from "./components/HooksCounter";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <div className="max-w-md mx-auto mt-10 space-y-5">
         {/*       <Counter></Counter> */}
         <HooksCounter />
+        <DynamicHooksCounter />
       </div>
     </div>
   );
