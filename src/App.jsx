@@ -1,5 +1,6 @@
 import DynamicHooksCounter from "./components/DynamicHooksCounter";
 import HooksCounter from "./components/HooksCounter";
+import VariableCounter from "./components/VaiableCounter";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         {/*       <Counter></Counter> */}
         <HooksCounter />
         <DynamicHooksCounter />
+        <VariableCounter />
+        <VariableCounter dynamic />
       </div>
     </div>
   );
