@@ -1,10 +1,10 @@
 import {
-    ADDED,
-    ALLCOMPLETED,
-    CLEARCOMPLETED,
-    COLORSELECTED,
-    DELETED,
-    TOGGLED,
+  ADDED,
+  ALLCOMPLETED,
+  CLEARCOMPLETED,
+  COLORSELECTED,
+  DELETED,
+  TOGGLED,
 } from "./actionTypes";
 import { initialState } from "./initialState";
 
