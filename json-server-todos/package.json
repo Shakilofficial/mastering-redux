@@ -1,0 +1,16 @@
+{
+  "name": "json-server-todos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db_todos.json true --port 9000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MD SHAKIL HOSSAIN",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.2"
+  }
+}
