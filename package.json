@@ -6,18 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/learnwithsumit/think-in-a-redux-way.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/learnwithsumit/think-in-a-redux-way/issues"
-  },
-  "homepage": "https://github.com/learnwithsumit/think-in-a-redux-way#readme",
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
+    "immer": "^10.1.1",
     "redux": "^4.2.0"
   }
 }
