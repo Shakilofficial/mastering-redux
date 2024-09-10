@@ -6,6 +6,6 @@ store.subscribe(() => {
     console.log(store.getState());
 });
 
-// disptach actions
+// dispatch actions
 store.dispatch(increment());
 store.dispatch(increment());

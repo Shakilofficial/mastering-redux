@@ -1,18 +1,18 @@
-const { DECREMENT, INCREMENT } = require("./actionTypes");
+const { DDECREMENT, DINCREMENT } = require("./actionTypes");
 
-const increment = () => {
-    return {
-        type: INCREMENT,
-    };
+const dincrement = () => {
+  return {
+    type: DINCREMENT,
+  };
 };
 
-const decrement = () => {
-    return {
-        type: DECREMENT,
-    };
+const ddecrement = () => {
+  return {
+    type: DDECREMENT,
+  };
 };
 
 module.exports = {
-    increment,
-    decrement,
+  dincrement,
+  ddecrement,
 };
