@@ -116,6 +116,10 @@ label {
   align-items: center;
 }
 
+.error {
+  color: red;
+}
+
 .income {
   background-color: #4338ca;
 }
@@ -163,7 +167,6 @@ label {
 }
 
 .cancel_edit {
-  display: none;
   margin-top: 10px;
   background-color: #e6425e !important;
 }
