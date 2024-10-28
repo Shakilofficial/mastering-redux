@@ -1,54 +1,64 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import deleteImage from "../../assets/delete.svg";
 import editImage from "../../assets/edit.svg";
+import { useDeleteVideoMutation } from "../../features/api/apiSlice";
+import Error from "../ui/Error";
 
 export default function Description({ video }) {
-    const { title,date, description,id } = video || {};
-    return (
-        <div>
-            <h1 className="text-lg font-semibold tracking-tight text-slate-800">
-                {title}
-            </h1>
-            <div className="pb-4 flex items-center space-between border-b gap-4">
-                <h2 className="text-sm leading-[1.7142857] text-slate-600 w-full">
-                    Uploaded on {date}
-                </h2>
+  const navigate = useNavigate();
+  const { title, date, description, id } = video || {};
 
-                <div className="flex gap-6 w-full justify-end">
-                    <div className="flex gap-1 justify-center items-center">
-                        <div className="shrink-0">
-                            <img
-                                className="w-5 block"
-                                src={editImage}
-                                alt="Edit"
-                            />
-                        </div>
-                        <Link to={`/videos/edit/${id}`}>
-                            <span className="text-sm leading-[1.7142857] text-slate-600 cursor-pointer">
-                                Edit
-                            </span>
-                        </Link>
-                    </div>
-                    <div className="flex gap-1 justify-center items-center">
-                        <div className="shrink-0">
-                            <img
-                                className="w-5 block"
-                                src={deleteImage}
-                                alt="Delete"
-                            />
-                        </div>
-                     <Link to={`/videos/${id}`}>
-                            <span className="text-sm leading-[1.7142857] text-slate-600 cursor-pointer">
-                                Delete
-                            </span>
-                        </Link>
-                    </div>
-                </div>
-            </div>
+  const [deleteVideo, { isError, isLoading, isSuccess }] =
+    useDeleteVideoMutation();
+  const handleDelete = () => {
+    if (id) deleteVideo(id);
+  };
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/");
+    }
+  }, [isSuccess, navigate]);
 
-            <div className="mt-4 text-sm text-[#334155] dark:text-slate-400">
-                {description}
+  return (
+    <div>
+      <h1 className="text-lg font-semibold tracking-tight text-slate-800">
+        {title}
+      </h1>
+      <div className="pb-4 flex items-center space-between border-b gap-4">
+        <h2 className="text-sm leading-[1.7142857] text-slate-600 w-full">
+          Uploaded on {date}
+        </h2>
+
+        <div className="flex gap-6 w-full justify-end">
+          <div className="flex gap-1 justify-center items-center">
+            <div className="shrink-0">
+              <img className="w-5 block" src={editImage} alt="Edit" />
             </div>
+            <Link to={`/videos/edit/${id}`}>
+              <span className="text-sm leading-[1.7142857] text-slate-600 cursor-pointer">
+                Edit
+              </span>
+            </Link>
+          </div>
+          <div className="flex gap-1 justify-center items-center cursor-pointer">
+            <div
+              className="shrink-0 flex gap-1 justify-center items-center"
+              onClick={handleDelete}
+            >
+              <img className="w-5 block" src={deleteImage} alt="Delete" />
+              <button className="text-sm leading-[1.7142857] text-slate-600 cursor-pointer">
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+
+      <div className="mt-4 text-sm text-[#334155] dark:text-slate-400">
+        {description}
+      </div>
+      {!isLoading && isError && <Error message="Something went wrong" />}
+    </div>
+  );
 }
